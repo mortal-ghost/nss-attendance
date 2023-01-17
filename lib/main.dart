@@ -1,7 +1,6 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+// import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -36,7 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _scanBarCode = 'Unknown';
   String result = "Unknown";
 
   void barCodeScan2() async {
@@ -50,25 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void barCodeScan() async {
-    String barCodeScanRes;
-
-    try {
-      barCodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-        '#ff6666',
-        'Cancel',
-        true,
-        ScanMode.BARCODE
-      );
-    } catch(e) {
-      barCodeScanRes = "Scanning Failed. Try Again";
-    }
-
-    setState(() {
-      _scanBarCode = barCodeScanRes;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,16 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "Bar Code Result 1: $_scanBarCode"
-          ),
-          TextButton(onPressed: barCodeScan,  child: const Text(
-            "Scan Bar Code"
-          )),
-          Text(
               "Bar Code Result 1: $result"
           ),
           TextButton(onPressed: barCodeScan2,  child: const Text(
-              "Scan Bar Code 2"
+              "Scan Bar Code"
           )),
         ],
       ),
