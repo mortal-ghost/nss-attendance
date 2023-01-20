@@ -1,10 +1,10 @@
-# nss_attendance
+# Nss_attendance
 
 live-time attendance taking app where cos students can log in and mark attendance through QR-scanner 
 
 ## Getting Started
 
-this project currently does not support ios devices , build an andriod emulator to run the project
+This project currently does not support ios devices , build an andriod emulator to run the project
 
 A few resources to get you started if this is your first Flutter project:
 
