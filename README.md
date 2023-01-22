@@ -1,6 +1,6 @@
 # Nss_attendance
 
-live-time attendance taking app where cos students can log in and mark attendance through QR-scanner 
+ a live-time attendance taking app where cos students can log in and mark attendance through QR-scanner 
 
 ## Getting Started
 

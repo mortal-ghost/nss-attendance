@@ -1,12 +1,13 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_import, unused_field, unnecessary_this
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:barcode_scan2/barcode_scan2.dart';
+// import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:nss_attendance/demo.dart';
 import 'package:nss_attendance/scanner.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,22 +44,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String result = "Unknown";
+  String _scanbarcode = "Unknown";
   int currentIndex = 0;
+  late String barcoderes;
 
   final screens = [
     Demo(),
     Scanner(),
   ];
 
-  void barCodeScan2() async {
-    var result = await BarcodeScanner.scan();
+  void barCodeScan() async {
+    var barcoderes = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666', 'Cancel', true, ScanMode.QR);
 
     if (kDebugMode) {
-      print(result);
+      print(barcoderes);
     }
     setState(() {
-      this.result = result.rawContent;
+      this._scanbarcode = barcoderes;
     });
   }
 
