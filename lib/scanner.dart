@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_import, implementation_imports, unused_import
+// ignore_for_file: prefer_const_constructors, unnecessary_import, implementation_imports, unused_import, unnecessary_this
 
 import 'package:barcode_scan2/platform_wrapper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class Scanner extends StatefulWidget {
   const Scanner({super.key});
@@ -14,17 +15,19 @@ class Scanner extends StatefulWidget {
 }
 
 class _ScannerState extends State<Scanner> {
-  String result = "Unknown";
+  String _scanbarcode = "Unknown";
   int currentIndex = 0;
+  late String barcoederes;
 
   void barCodeScan2() async {
-    var result = await BarcodeScanner.scan();
+    var barcoderes = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666', 'Cancel', true, ScanMode.QR);
 
     if (kDebugMode) {
-      print(result);
+      print(barcoderes);
     }
     setState(() {
-      this.result = result.rawContent;
+      this._scanbarcode = barcoderes;
     });
   }
 
@@ -34,7 +37,7 @@ class _ScannerState extends State<Scanner> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Bar Code Result 1: $result"),
+          Text("Bar Code Result: $_scanbarcode"),
           TextButton(
               onPressed: barCodeScan2, child: const Text("Scan Bar Code")),
         ],

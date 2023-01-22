@@ -44,26 +44,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _scanbarcode = "Unknown";
   int currentIndex = 0;
-  late String barcoderes;
 
   final screens = [
     Demo(),
     Scanner(),
   ];
-
-  void barCodeScan() async {
-    var barcoderes = await FlutterBarcodeScanner.scanBarcode(
-        '#ff6666', 'Cancel', true, ScanMode.QR);
-
-    if (kDebugMode) {
-      print(barcoderes);
-    }
-    setState(() {
-      this._scanbarcode = barcoderes;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
