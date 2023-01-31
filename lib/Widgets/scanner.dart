@@ -37,7 +37,7 @@ class _ScannerState extends State<Scanner> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Bar Code Result: $_scanbarcode"),
+          Text("BarCode Result: $_scanbarcode"),
           TextButton(
               onPressed: barCodeScan2, child: const Text("Scan Bar Code")),
         ],
