@@ -78,6 +78,7 @@ class Navbar extends StatelessWidget {
                 title: Text('Request'),
                 onTap: () => null,
               ),
+              Divider(),
               ListTile(
                 leading: Icon(Icons.settings),
                 // iconColor: Colors.black,
@@ -85,7 +86,6 @@ class Navbar extends StatelessWidget {
                 title: Text('Settings'),
                 onTap: () => null,
               ),
-              Divider(),
               ListTile(
                 leading: Icon(Icons.description),
                 // iconColor: Colors.black,
