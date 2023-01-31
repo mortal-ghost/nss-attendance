@@ -2,11 +2,10 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-// import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:nss_attendance/demo.dart';
-import 'package:nss_attendance/scanner.dart';
+import 'package:nss_attendance/Widgets/Navbar.dart';
+import 'package:nss_attendance/Widgets/demo.dart';
+import 'package:nss_attendance/Widgets/scanner.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() async {
@@ -54,8 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Navbar(),
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
         title: const Text("Bar Code Scanner"),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.red, Colors.purple],
+              end: Alignment.topLeft,
+              begin: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
