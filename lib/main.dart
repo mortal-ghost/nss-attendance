@@ -3,7 +3,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:nss_attendance/Widgets/Login.dart';
 import 'package:nss_attendance/Widgets/Navbar.dart';
+import 'package:nss_attendance/Widgets/Signup.dart';
 import 'package:nss_attendance/Widgets/demo.dart';
 import 'package:nss_attendance/Widgets/scanner.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -29,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Bar Code Scanner',
       theme: ThemeData(),
-      home: const MyHomePage(title: 'Bar Code Scanner'),
+      home: LoginScreen(),
     );
   }
 }
