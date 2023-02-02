@@ -4,9 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:nss_attendance/Widgets/Login.dart';
-import 'package:nss_attendance/Widgets/Navbar.dart';
-import 'package:nss_attendance/Widgets/Signup.dart';
-import 'package:nss_attendance/Widgets/demo.dart';
+import 'package:nss_attendance/Widgets/components/center_widget/Navbar.dart';
+import 'package:nss_attendance/Widgets/Home.dart';
 import 'package:nss_attendance/Widgets/scanner.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 

@@ -1,15 +1,16 @@
-// ignore_for_file: unused_import, prefer_const_constructors, sort_child_properties_last
-
+// ignore_for_file: unused_import, prefer_const_constructors, sort_child_properties_last, non_constant_identifier_names, unrelated_type_equality_checks
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:lottie/lottie.dart';
-// import 'package:login_screen/utils/helper_functions.dart';
-
+import 'package:nss_attendance/Widgets/Home.dart';
+import 'package:nss_attendance/Widgets/Login.dart';
+import 'package:nss_attendance/Widgets/scanner.dart';
 import '../../../utils/constants.dart';
 import '../animations/change_screen_animation.dart';
 import '../utils/helper_functions.dart';
-import 'bottom_text.dart';
-import 'top_text.dart';
+import 'components/center_widget/bottom_text.dart';
+import 'components/center_widget/top_text.dart';
+import 'package:nss_attendance/main.dart';
 
 enum Screens {
   createAccount,
@@ -56,9 +57,34 @@ class _LoginContentState extends State<LoginContent>
     );
   }
 
-  Widget loginButton(String title) {
+  Widget loginButton() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 135, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 105, vertical: 16),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginContent()));
+        },
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          shape: const StadiumBorder(),
+          elevation: 10,
+          shadowColor: Colors.black87,
+        ),
+        child: Text(
+          'Log In',
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget signinbtn() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 78.0),
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
@@ -68,9 +94,9 @@ class _LoginContentState extends State<LoginContent>
           shadowColor: Colors.black87,
         ),
         child: Text(
-          title,
+          'Login to get started',
           style: const TextStyle(
-            fontSize: 18,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -144,9 +170,7 @@ class _LoginContentState extends State<LoginContent>
   @override
   void initState() {
     createAccountContent = [
-      inputField('Email', Ionicons.mail_outline),
-      inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Sign Up'),
+      signinbtn(),
       orDivider(),
       logos(),
     ];
@@ -154,7 +178,7 @@ class _LoginContentState extends State<LoginContent>
     loginContent = [
       inputField('Email', Ionicons.mail_outline),
       inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Log In'),
+      loginButton(),
       forgotPassword(),
     ];
 
@@ -208,7 +232,7 @@ class _LoginContentState extends State<LoginContent>
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 130),
+          padding: const EdgeInsets.only(top: 150),
           child: Stack(
             children: [
               Column(

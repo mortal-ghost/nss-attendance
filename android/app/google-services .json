@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526545662503",
+    "project_id": "saber-98644",
+    "storage_bucket": "saber-98644.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526545662503:android:5960c0840dd91a012f1402",
+        "android_client_info": {
+          "package_name": "com.example.nss_attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526545662503-99amsej0bh8jgtf1dsemq5ae626s7nfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsYHxL2gryLrrzMAmDKv2KhFVrzsMxbGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526545662503-99amsej0bh8jgtf1dsemq5ae626s7nfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
